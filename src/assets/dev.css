@@ -1,0 +1,14 @@
+.homebanner.jumbotron.jumbotron-fluid > ul.banner-slide li span{
+    padding-top: 35px;
+}
+
+.homebanner.jumbotron.jumbotron-fluid > ul.banner-slide li span img{
+    margin:0 auto;
+}
+
+
+
+
+.homebanner.jumbotron.jumbotron-fluid > .carousel .carousel-inner .carousel-item > .carousel-caption{
+	bottom:0px !important;
+	}
