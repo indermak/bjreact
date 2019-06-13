@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/bjreact/static/css/main.a0946326.chunk.css",
-    "main.js": "/bjreact/static/js/main.09eacf52.chunk.js",
-    "main.js.map": "/bjreact/static/js/main.09eacf52.chunk.js.map",
+    "main.css": "/bjreact/static/css/main.2459db3d.chunk.css",
+    "main.js": "/bjreact/static/js/main.2289c452.chunk.js",
+    "main.js.map": "/bjreact/static/js/main.2289c452.chunk.js.map",
     "runtime~main.js": "/bjreact/static/js/runtime~main.6c85d1cc.js",
     "runtime~main.js.map": "/bjreact/static/js/runtime~main.6c85d1cc.js.map",
     "static/js/2.a88817e3.chunk.js": "/bjreact/static/js/2.a88817e3.chunk.js",
@@ -30,9 +30,9 @@
     "static/js/13.0ffc67de.chunk.js": "/bjreact/static/js/13.0ffc67de.chunk.js",
     "static/js/13.0ffc67de.chunk.js.map": "/bjreact/static/js/13.0ffc67de.chunk.js.map",
     "index.html": "/bjreact/index.html",
-    "precache-manifest.57e4a53809fa23b18e6d544bf7312c2a.js": "/bjreact/precache-manifest.57e4a53809fa23b18e6d544bf7312c2a.js",
+    "precache-manifest.2ab83dc1192697c78b70064fad109e87.js": "/bjreact/precache-manifest.2ab83dc1192697c78b70064fad109e87.js",
     "service-worker.js": "/bjreact/service-worker.js",
-    "static/css/main.a0946326.chunk.css.map": "/bjreact/static/css/main.a0946326.chunk.css.map",
+    "static/css/main.2459db3d.chunk.css.map": "/bjreact/static/css/main.2459db3d.chunk.css.map",
     "static/media/404-error.png": "/bjreact/static/media/404-error.cfe91d42.png",
     "static/media/Anytime is a good time.jpg": "/bjreact/static/media/Anytime is a good time.6777e2bd.jpg",
     "static/media/Bajaj-Capital-logo.png": "/bjreact/static/media/Bajaj-Capital-logo.8b3d6a4e.png",

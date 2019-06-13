@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "30b9a16d3a221f1eca47327d5e8ab486",
+    "revision": "0aa67e7a09c41c24af28867870ab6035",
     "url": "/bjreact/index.html"
   },
   {
-    "revision": "6b9b995cd9a17ca32d16",
-    "url": "/bjreact/static/css/main.a0946326.chunk.css"
+    "revision": "b8fe940d652ce3af7303",
+    "url": "/bjreact/static/css/main.2459db3d.chunk.css"
   },
   {
     "revision": "c58805753fb8d8554cfc",
@@ -56,8 +56,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/bjreact/static/js/9.7e0474b1.chunk.js"
   },
   {
-    "revision": "6b9b995cd9a17ca32d16",
-    "url": "/bjreact/static/js/main.09eacf52.chunk.js"
+    "revision": "b8fe940d652ce3af7303",
+    "url": "/bjreact/static/js/main.2289c452.chunk.js"
   },
   {
     "revision": "96bf2245ce8a8a11ab06",
