@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/bjreact/static/css/main.eeaee520.chunk.css",
-    "main.js": "/bjreact/static/js/main.f5b20921.chunk.js",
-    "main.js.map": "/bjreact/static/js/main.f5b20921.chunk.js.map",
+    "main.js": "/bjreact/static/js/main.8b843667.chunk.js",
+    "main.js.map": "/bjreact/static/js/main.8b843667.chunk.js.map",
     "runtime~main.js": "/bjreact/static/js/runtime~main.6c85d1cc.js",
     "runtime~main.js.map": "/bjreact/static/js/runtime~main.6c85d1cc.js.map",
     "static/js/2.a88817e3.chunk.js": "/bjreact/static/js/2.a88817e3.chunk.js",
@@ -30,7 +30,7 @@
     "static/js/13.0ffc67de.chunk.js": "/bjreact/static/js/13.0ffc67de.chunk.js",
     "static/js/13.0ffc67de.chunk.js.map": "/bjreact/static/js/13.0ffc67de.chunk.js.map",
     "index.html": "/bjreact/index.html",
-    "precache-manifest.46230cff262ebd370ae0d7e3994c6b20.js": "/bjreact/precache-manifest.46230cff262ebd370ae0d7e3994c6b20.js",
+    "precache-manifest.15b2fbbabf2729c4bafa1b15fa1393da.js": "/bjreact/precache-manifest.15b2fbbabf2729c4bafa1b15fa1393da.js",
     "service-worker.js": "/bjreact/service-worker.js",
     "static/css/main.eeaee520.chunk.css.map": "/bjreact/static/css/main.eeaee520.chunk.css.map",
     "static/media/404-error.png": "/bjreact/static/media/404-error.cfe91d42.png",
