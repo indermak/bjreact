@@ -1,47 +1,47 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c8ad637a62056e47c9351cfd9c55717e",
+    "revision": "72b4a9927dd70f89b325a14e8c712272",
     "url": "/bjreact/index.html"
   },
   {
-    "revision": "c198937571a8bc5f5ec0",
+    "revision": "2862bf626083dae10589",
     "url": "/bjreact/static/css/3.266e55a5.chunk.css"
   },
   {
-    "revision": "fa51528c5ba4b93e6056",
-    "url": "/bjreact/static/css/main.792739ea.chunk.css"
+    "revision": "58bfc45606dded2f74da",
+    "url": "/bjreact/static/css/main.9b2ab504.chunk.css"
   },
   {
-    "revision": "a4c55e1848c9b2c48e0b",
-    "url": "/bjreact/static/js/0.88634902.chunk.js"
+    "revision": "a9eddf2a314f7cff944b",
+    "url": "/bjreact/static/js/0.4e6047b9.chunk.js"
   },
   {
-    "revision": "c198937571a8bc5f5ec0",
-    "url": "/bjreact/static/js/3.68d9f8b3.chunk.js"
+    "revision": "2862bf626083dae10589",
+    "url": "/bjreact/static/js/3.70074edb.chunk.js"
   },
   {
-    "revision": "ebb974cb9f7e6aa38cc1",
-    "url": "/bjreact/static/js/4.824eb069.chunk.js"
+    "revision": "832c23ce4fefd01291e5",
+    "url": "/bjreact/static/js/4.a8cd5173.chunk.js"
   },
   {
-    "revision": "6fa2c0685f0dfbfb06b5",
-    "url": "/bjreact/static/js/5.1702bf58.chunk.js"
+    "revision": "368a2ee397ed977c820e",
+    "url": "/bjreact/static/js/5.5e1bdfd7.chunk.js"
   },
   {
-    "revision": "f31357f5a1a57468e8f9",
-    "url": "/bjreact/static/js/6.24dbfca7.chunk.js"
+    "revision": "50d6ef82fd3e01b36ae1",
+    "url": "/bjreact/static/js/6.e93e8837.chunk.js"
   },
   {
-    "revision": "afd0e6ace569ebc24a49",
-    "url": "/bjreact/static/js/7.09996c80.chunk.js"
+    "revision": "fe46c0bb39590188c6d7",
+    "url": "/bjreact/static/js/7.09aed77f.chunk.js"
   },
   {
-    "revision": "fa51528c5ba4b93e6056",
-    "url": "/bjreact/static/js/main.5d039914.chunk.js"
+    "revision": "58bfc45606dded2f74da",
+    "url": "/bjreact/static/js/main.f549f3d3.chunk.js"
   },
   {
-    "revision": "b2878e5ae7ae4bc9476b",
-    "url": "/bjreact/static/js/runtime~main.9e65fd6a.js"
+    "revision": "c5b2d61db7dfeea09617",
+    "url": "/bjreact/static/js/runtime~main.7618da16.js"
   },
   {
     "revision": "45d9ac6c3f007bfeaf2dda45383dd5f0",
@@ -226,6 +226,22 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "c7b5efb70b97bf799bb0066478f6f246",
     "url": "/bjreact/static/media/ins3.c7b5efb7.svg"
+  },
+  {
+    "revision": "65b1df6c82b0a99d4817ae39617187c4",
+    "url": "/bjreact/static/media/m-banner-01.65b1df6c.jpg"
+  },
+  {
+    "revision": "0e41f27d663d0b26d55cf9931ad33ddd",
+    "url": "/bjreact/static/media/m-banner-03.0e41f27d.jpg"
+  },
+  {
+    "revision": "cb1c167c1020e96ab8c2db2823db770e",
+    "url": "/bjreact/static/media/m-banner-04.cb1c167c.jpg"
+  },
+  {
+    "revision": "7d870bc1dbe6a7fd78ae5f9f967a35cf",
+    "url": "/bjreact/static/media/m-banner-07.7d870bc1.jpg"
   },
   {
     "revision": "888f8638f3fc43d980d3b7f58aa3656f",
