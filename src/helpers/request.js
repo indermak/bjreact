@@ -1,7 +1,7 @@
 import axios from 'axios';
 import apiConstants from '../constants/api';
 const env = process.env.NODE_ENV;
-const { drupalUrl } = apiConstants[env];
+const { drupalUrl, getBranch } = apiConstants[env];
 
 const requestHelper = {
     getBlogs: async ({ filters = {} }) => {
@@ -42,7 +42,7 @@ const requestHelper = {
         try {
             const branches = await axios({
                 method: 'post',
-                url: `https://portfolio.wealthmaker.in/wmapi/WealthMakerAPIKit.svc/GetBranch`,
+                url: getBranch,
                 data: { BusinessType: type },
                 config: {
                     headers: {

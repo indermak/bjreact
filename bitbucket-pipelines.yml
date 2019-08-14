@@ -1,0 +1,83 @@
+image: node:10
+
+pipelines:
+  branches:
+    dev:
+      - step:
+          caches:
+            - node
+          deployment: dev
+          script:
+            - npm install
+            - npm run build
+            - ls -ltr
+            - cd build
+            - pipe: atlassian/aws-s3-deploy:0.2.4
+              variables:
+                AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                AWS_DEFAULT_REGION:  $AWS_REGION
+                ACL: "public-read"
+                S3_BUCKET: $AWS_BUCKET_TARGET
+                LOCAL_PATH: $(pwd)
+            - pipe: docker://rudijs/aws-cloudfront-create-invalidation:1.0.1
+              variables:
+                AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                DISTRIBUTION_ID: $AWS_DISTRIBUTION_ID
+            #- pip install "awscli"
+            #- aws configure set preview.cloudfront true
+            #- aws cloudfront create-invalidation --distribution-id $AWS_DISTRIBUTION_ID --paths /*
+    stage:        
+      - step:
+          caches:
+            - node
+          deployment: stage
+          script:
+            - npm install
+            - npm run build
+            - ls -ltr
+            - cd build
+            - pipe: atlassian/aws-s3-deploy:0.2.4
+              variables:
+                AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                AWS_DEFAULT_REGION:  $AWS_REGION
+                ACL: "public-read"
+                S3_BUCKET: $AWS_BUCKET_TARGET
+                LOCAL_PATH: $(pwd)
+            - pipe: docker://rudijs/aws-cloudfront-create-invalidation:1.0.1
+              variables:
+                AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                DISTRIBUTION_ID: $AWS_DISTRIBUTION_ID
+            #- pip install "awscli"
+            #- aws configure set preview.cloudfront true
+            #- aws cloudfront create-invalidation --distribution-id $AWS_DISTRIBUTION_ID --paths /*
+    master:
+      - step:
+          caches:
+            - node
+          deployment: prod
+          script:
+            - npm install
+            - npm run build
+            - ls -ltr
+            - cd build
+            - pipe: atlassian/aws-s3-deploy:0.2.4
+              variables:
+                AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                AWS_DEFAULT_REGION:  $AWS_REGION
+                ACL: "public-read"
+                S3_BUCKET: $AWS_BUCKET_TARGET
+                LOCAL_PATH: $(pwd)
+            - pipe: docker://rudijs/aws-cloudfront-create-invalidation:1.0.1
+              variables:
+                AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                DISTRIBUTION_ID: $AWS_DISTRIBUTION_ID
+            #- pip install "awscli"
+            #- aws configure set preview.cloudfront true
+            #- aws cloudfront create-invalidation --distribution-id $AWS_DISTRIBUTION_ID --paths /*
+          

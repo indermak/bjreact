@@ -1,5 +1,4 @@
 import React from 'react';
-import SocialButtons from '../../components/socialButtons/socialButtons';
 import requestHelper from '../../helpers/request';
 
 export default class extends React.Component {
@@ -12,7 +11,7 @@ export default class extends React.Component {
             loading: false,
             city: '',
             branch: '',
-            type: 'Wealth Mamagement Center'
+            type: 'Retail Branhes'
         }
     }
 
@@ -99,7 +98,7 @@ export default class extends React.Component {
                 <div className=" col-12 col-md-6 col-lg-6 col-sm-6 mb-6" key={branch.BranchName}>
                     <div className="card">
                         <div className="card-body ">
-                            <div className="card-text">
+                            <div className="card-text pt40">
                                 {branch.Address && (<p><strong>Address: </strong><span className="address ">{branch.Address}</span></p>)}
                                 {/* <p><strong>Hours: </strong><span>10:00 - 22:00, Monday to Sunday</span></p> */}
                                 {branch.CityName && (<p><strong>City: </strong>{branch.CityName}</p>)}
@@ -107,7 +106,7 @@ export default class extends React.Component {
                                 </p>)}
                                 {branch.Email && (<p><strong>Email: </strong>{branch.Email}</p>)}
                             </div>
-                            {branch.ChannelName && (<span className="float-left pt-1"> {branch.ChannelName}</span>)}
+                            {branch.ChannelName && (<span className="float-left pt-1"> {branch.ChannelName === 'Retail Branhes' ? 'Retail Branches' : branch.ChannelName }</span>)}
                         </div>
                     </div>
                 </div>
@@ -120,34 +119,50 @@ export default class extends React.Component {
         this.setState({ type, city: '', branch: '' });
     }
 
+    handleChange = (event) => {
+        this.setState({ type: event.target.value, city: '', branch: '' });
+    }
+
     render() {
         const { type, city, branch } = this.state;
         return (
             <main role="main">
                 {/*Banner */}
-                <section className="aboutbanner branch-banner pb60 pt60">
+                <section className="aboutbanner branch-banner pt100 pb80">
                     <div className="container">
                         <div className="row">
                             <div className="col-lg-8 offset-lg-2  sec-heading text-center">
-                                <h1> Brach Locator</h1>
+                                <h1> Branch Locator</h1>
                                 Over 110 locations all over India </div>
                             <div className="col-lg-8 offset-lg-2  text-center">
+                                <div className="  d-none d-sm-block mt-2">
                                 <div className="btn-group btn-slide" role="group" aria-label="Basic example">
                                     <button type="button" className={(type === 'Retail Branhes') ? 'btn btn-secondary active' : 'btn btn-secondary'}
-                                        onClick={(e) => this.changeType(e, 'Retail Branhes')}>Investment Centers</button>
+                                        onClick={(e) => this.changeType(e, 'Retail Branhes')}>Investment Centres</button>
                                     <button type="button" className={(type === 'Wealth Mamagement Center') ? 'btn btn-secondary active' : 'btn btn-secondary'}
-                                        onClick={(e) => this.changeType(e, 'Wealth Mamagement Center')}>Wealth Management Centers </button>
+                                        onClick={(e) => this.changeType(e, 'Wealth Mamagement Center')}>Wealth Management Centres </button>
                                     <button type="button" className={(type === 'Advisor Network Group') ? 'btn btn-secondary active' : 'btn btn-secondary'}
                                         onClick={(e) => this.changeType(e, 'Advisor Network Group')}>Advisor Network Group</button>
                                 </div>
+                                </div>
                                 <div className="row branchselect">
+                                    <div className=" col-md d-block d-sm-none mt-2">
+                                        <div className="form-group">
+                                            <select className="form-control"
+                                                value={type} onChange={this.handleChange}>
+                                                <option value="Retail Branhes">Investment Centers</option>
+                                                <option value="Wealth Mamagement Center">Wealth Management Centers</option>
+                                                <option value="Advisor Network Group">Advisor Network Group</option>
+                                            </select>
+                                        </div>
+                                    </div>
                                     <div className="col-md">
                                         <div className="form-group">
                                             <select className="form-control"
                                                 value={city}
                                                 id="exampleFormControlSelect1" onChange={this.handleCityChange}>
                                                 <React.Fragment>
-                                                    <option>Select city</option>
+                                                    <option>Select City</option>
                                                     {this.renderCityOptions()}
                                                 </React.Fragment>
                                             </select>
@@ -171,15 +186,14 @@ export default class extends React.Component {
                     </div>
                 </section>
                 {/* Bajaj Capital Branch Locator */}
-                <SocialButtons />
                 <section className="homeblog branch-main pb80">
                     <div className="container">
-                        <div className="row">
-                            <div className="col-lg-12 sec-heading text-center d-none d-sm-block">
+                        <div className="row justify-content-center">
+                            <div className="col-lg-8 sec-heading text-center d-none d-sm-block">
                                 {(type === 'Retail Branhes') && (
                                     <React.Fragment>
-                                        <h2> Investment Centers</h2>
-                                            These facilities enable clients who are looking for investment solutions for various purposes such as wealth creation, goal-based investments like retirement,child's education etc.
+                                        <h2> Investment Centres</h2>
+                                            These facilities enable clients who are looking for investment solutions for various purposes such as wealth creation, and goal-based investments like retirement, child's education etc.
                                     </React.Fragment>)}
                                 {(type === 'Advisor Network Group') && (
                                     <React.Fragment>

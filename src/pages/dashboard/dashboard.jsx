@@ -1,37 +1,65 @@
-import React from 'react';
-import SubProducts from './components/subProducts/subProducts';
-import TrendingProducts from './components/trendingProducts/trendingProducts';
-import WhyBajaj from './components/whyBajaj/whyBajaj';
-import WhyNumber from './components/whyNumber/whyNumber';
-import ClientSayings from './components/clientSayings/clientSayings';
-import Partners from './components/partners/partners';
-import Blogs from './components/blogs/blogs';
-import Awards from './components/awards/awards';
-import GetInTouch from './components/getInTouch/getInTouch';
+import React, { Suspense, lazy } from 'react';
 import Products from './components/products/products';
-export default class Bajaj extends React.Component {
-    showItems = (window.innerWidth <= 480) ? 1 : 3;
+import SubProducts from './components/subProducts/subProducts';
+import Spinner from '../../components/spinner/spinner';
+const Solutions = lazy(() => import('./components/solutions/solutions'));
+const WhyNumber = lazy(() => import('./components/whyNumber/whyNumber'));
+const Blogs = lazy(() => import('./components/blogs/blogs'));
+const GetInTouch = lazy(() => import('./components/getInTouch/getInTouch'));
+export default class Dashboard extends React.Component {
+    constructor(props) {
+        super(props);
+        this.timer = false;
+        sessionStorage.setItem('onebajaj', 'capital');
+        setTimeout(() => {
+            sessionStorage.removeItem('onebajaj');
+        }, 500)
+        this.elements = [
+            <WhyNumber key="WhyNumber" />,
+            <Solutions key="Solutions" />,
+            <Blogs key="Blogs"  />,
+            <GetInTouch key="GetInTouch" />
+        ];
+        this.state = {
+            renderElements: [],
+            rendered: 0,
+            isScroll: false
+        }
+    }
+    componentDidMount() {
+        window.addEventListener('scroll', this.handleScroll);
+        window.scrollTo(0, 0);
+        this.timer = setTimeout(() => {
+            if (!this.state.isScroll) {
+                this.setState({
+                    renderElements: [...this.elements]
+                });
+            }
+        }, 4000)
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this.handleScroll, false);
+        clearTimeout(this.timer);
+    }
+
+    handleScroll = () => {
+        this.setState({
+            renderElements: [...this.elements], isScroll: true
+        });
+        window.removeEventListener('scroll', this.handleScroll, false);
+    }
 
     render() {
+        const { renderElements } = this.state;
         return (
-            <div>
-                <main role="main">
-                    <Products
-                        showItems={this.showItems}
-                    />
-                    <SubProducts
-                        showItems={this.showItems}
-                    />
-                    <TrendingProducts />
-                    <WhyBajaj />
-                    <WhyNumber />
-                    <ClientSayings />
-                    <Partners />
-                    <Blogs />
-                    <Awards />
-                    <GetInTouch />
-                </main></div>
-
+            <main role="main">
+                <Products />
+                <SubProducts />
+                <Suspense fallback={<Spinner style={{ position: 'fixed' }} />}>
+                    {renderElements}
+                </Suspense>
+            </main>
         )
     }
 }
